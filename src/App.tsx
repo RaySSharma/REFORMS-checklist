@@ -156,11 +156,11 @@ export const App: React.FC = () => {
         <p>
           REFORMS Checklist by Kapoor et al. • Built with React + TypeScript •{' '}
           <a
-            href="https://github.com/princetonpku/REFORMS"
+            href="https://reforms.cs.princeton.edu/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            GitHub
+            Website
           </a>
         </p>
       </footer>
