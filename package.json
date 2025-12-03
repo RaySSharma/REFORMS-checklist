@@ -4,11 +4,6 @@
   "version": "0.1.0",
   "type": "module",
   "homepage": "http://rayssharma.github.io/REFORMS-checklist",
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "deploy": "gh-pages -d build"
-  },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
