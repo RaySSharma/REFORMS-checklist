@@ -1,0 +1,220 @@
+{
+  "modules": [
+    {
+      "id": 1,
+      "title": "Study goals",
+      "description": "The items in this section help communicate the purpose and goals of the study and how various decisions in the study design were arrived at. Details about the design of the study are important to clarify the applicability of the scientific claims of the study.",
+      "items": [
+        {
+          "id": "1a",
+          "title": "Population or distribution about which the scientific claim is made",
+          "guideline": "Researchers make scientific claims about a given distribution or population that they are interested in studying. Note that this is the population of interest, and not the sample, which can be specified later in (3b.)\n\nTo communicate the applicability of the claims, explicitly report the distribution or population about which you expect the scientific claims to hold. For example, 'US children aged between 12 and 18' or 'people engaging in online debates on climate change.'"
+        },
+        {
+          "id": "1b",
+          "title": "Motivation for choosing this population or distribution (1a.)",
+          "guideline": "Justify why the researchers chose this population or distribution. For example: 'We aimed to determine whether existing vaccines for COVID-19 are effective in children aged between 12 and 18. There are no prior studies on vaccine efficacy in this population.'\n\nA valid motivation is having access to a dataset that inspired a research question, and thus the population or distribution of interest is limited by the dataset. For example, studying CDC data for all U.S. counties would limit the population of interest to US counties."
+        },
+        {
+          "id": "1c",
+          "title": "Motivation for the use of ML methods in the study",
+          "guideline": "Report the reasons for using ML methods and consider comparing it with alternative or traditional methods that could be used for similar aims.\n\nFor example, if the goal of the research is to make a prediction, i.e., if explanation is not a goal of the study, ML methods can help improve predictive accuracy.\n\nSee Hofman et al. (2021) for an overview of the different types of modeling and their aims."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Computational reproducibility",
+      "description": "Computational reproducibility refers to the ability of a researcher to get the same figures and results that are reported in a paper or manuscript without making any changes to the code, data, or computing environment. This is important for ensuring the scientific validity of a study: errors can be uncovered quickly, independent researchers can verify the findings in a study, and researchers can easily build on a study's results.",
+      "items": [
+        {
+          "id": "2a",
+          "title": "Dataset used for training and evaluating the model along with link or DOI to uniquely identify the dataset",
+          "guideline": "Report a permanent link or DOI to the specific version of the dataset used for training and evaluating the model. For a discussion of the importance of DOIs, see Peng, Mathur, Narayanan (2021).\n\nIf an original dataset was used, also include the data dictionary for the dataset. A data dictionary describes metadata about the dataset, and familiarizes a reader to the properties and format of the data.\n\nIf the dataset contains sensitive information and cannot be publicly released, consider releasing a synthetic dataset, or releasing the data per request or application."
+        },
+        {
+          "id": "2b",
+          "title": "Code used to train and evaluate the model and produce the results reported in the paper along with link or DOI to uniquely identify the version of the code used",
+          "guideline": "Provide a commit tag (for instance, on Github, GitLab, or BitBucket), a DOI, or equivalent documentation to precisely identify the version of the code used to train and evaluate the model and produce the exact results reported in the paper.\n\nIn the code, include comments with explanations of variables and operations to sufficiently mark different stages of the analysis for an unfamiliar reader. The documentation in (2d) can refer to these comments for greater clarity."
+        },
+        {
+          "id": "2c",
+          "title": "Description of the computing infrastructure used",
+          "guideline": "To help readers understand the precise computing requirements for reproducing your study, whenever possible, report the following details on the infrastructure used to generate the results:\n\n1. Hardware infrastructure: CPU, GPU, RAM, disk space.\n2. Operating system and its version.\n3. Software environment: Programming language and version, documentation of all packages used along with versions and dependencies (e.g., through a requirements.txt file).\n4. An estimate of the time taken to generate the results.\n\nComputing infrastructure is always changing, and thus could make it difficult or impossible to replicate a study with a slightly different environment. Having the exact details is crucial for replication."
+        },
+        {
+          "id": "2d",
+          "title": "README file which contains instructions for generating the results using the provided dataset and code",
+          "guideline": "Report the exact steps that should be taken by independent researchers to reproduce the results in your study, given access to the code, dataset, and computing environment specified in 2a-c.\n\nA good README helps someone unfamiliar with the project by walking them through the steps of setting up and running the code provided, starting from environment requirements and installation, to examples of usage and expected results.\n\nConsider using Nature's README for software submission or the README template for social science replication packages."
+        },
+        {
+          "id": "2e",
+          "title": "Reproduction script to produce all results reported in the paper",
+          "guideline": "A script to produce all results reported in the paper using the code and dataset can significantly reduce the time it takes for an independent researcher to reproduce the results reported in a study.\n\nThe script should go through all steps involved in producing the results. For example, the script should download the packages, set the right dependencies, download and store the dataset in the correct location, set up the computational environment, pre-process the data, and run the code to produce exactly the same results as reported in the paper.\n\nNote that this is a high bar for computational reproducibility, and in some cases, it might not be possible to provide such a script—for instance, if the analysis is run on an academic high-performance computing cluster, or if the dataset does not allow for programmatic download."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Data quality",
+      "description": "This section is focused on reporting details about how the data used for developing and evaluating the model is collected. A good quality dataset is key to making valid scientific claims using ML models.",
+      "items": [
+        {
+          "id": "3a",
+          "title": "Source(s) of data, separately for the training and evaluation datasets (if applicable), along with the time when the dataset(s) are collected, the source and process of ground-truth annotations, and other data documentation",
+          "guideline": "Report details about the source of the dataset, separately for the training and validation data sets (if applicable). For instance, if re-using the dataset from a previous study, cite the study and explain what the source of the data collection was.\n\nIf collecting a new dataset, report the data collection process, who annotated the dataset, and how the annotations were carried out. Report the time-period and geographic locations of data collection.\n\nYou can also follow discipline-specific best-practices when releasing or using datasets. Examples include Datasheets for Datasets, Dataset Nutrition Labels, or the Brain Imaging Data Structure for Neuroimaging."
+        },
+        {
+          "id": "3b",
+          "title": "Distribution or set from which the dataset is sampled (i.e., the sampling frame)",
+          "guideline": "The sampling frame is the source from which a sample is drawn (using a sampling method.) The unit of the sampling frame is typically also the unit of the sample.\n\nReport the sampling frame, which is the distribution or set from which the dataset is sampled. Include the sampling method (e.g., simple random, stratified, cluster sampling, etc.) Include any details about the distribution or population that pertains to the study (1a.)."
+        },
+        {
+          "id": "3c",
+          "title": "Justification for why the dataset is useful for the modeling task at hand",
+          "guideline": "Report the rationale for why the dataset is useful for modeling and making the scientific claim reported in the study. Justifications could describe why the dataset is relevant to the modeling task, such as quantifying the population of interest well, or including novel insight that would be discovered through modeling."
+        },
+        {
+          "id": "3d",
+          "title": "The definition of the outcome variable of the model along with descriptive statistics, if applicable",
+          "guideline": "The outcome or target variable of the ML model is the quantity that the model is used to predict, detect, classify, or estimate. In other words, it is the variable of interest in the modeling process.\n\nReport the outcome variable of the ML model. Provide descriptive statistics (e.g., mean, median, and variance) for the outcome variable, if applicable. For tasks with a continuous outcome variable (i.e., regression tasks), consider providing a plot of the outcome's distribution, such as a histogram."
+        },
+        {
+          "id": "3e",
+          "title": "Number of samples in the dataset",
+          "guideline": "Report the total number of samples (for a tabular dataset, this is the total number of rows in the dataset) as well as the number of samples in each class for a classification task.\n\nIf there are individuals or entities with multiple observations, report both the number of distinct individuals, as well as overall rows or units of data. For example, if you have a dataset with 10,000 rows with data on 5,000 unique patients, report both of these numbers."
+        },
+        {
+          "id": "3f",
+          "title": "Percentage of missing data, split by class for a categorical outcome variable",
+          "guideline": "Datasets often have missing samples. An estimate of missingness can give readers an idea of how important the methods for dealing with missing data are in a given study.\n\nReport the number or percentage of missing samples for each feature, when possible. Alternatively, provide summary statistics for the proportion of missing data."
+        },
+        {
+          "id": "3g",
+          "title": "Justification for why the distribution or set from which the dataset is drawn (3b.) is representative of the one about which the scientific claim is being made (1a.)",
+          "guideline": "Justify why the distribution or set from which the dataset is drawn (3b.) is representative of the population about which the scientific claim is being made (1a.).\n\nThere are many reasons the sampling frame could be unrepresentative: for example, if it is a convenience sample, if it under-represents minorities, or constitutes a too small sample size. If the sample is unrepresentative of the target population, note this as a concern in the section on external validity (8a.)."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Data preprocessing",
+      "description": "Pre-processing is the series of steps taken to convert the dataset used from its raw form into the final form used in the modeling process. This includes data selection and other transformations of the data, such as imputing missing data and normalizing feature values.",
+      "items": [
+        {
+          "id": "4a",
+          "title": "Identification of whether any samples are excluded with a rationale for why they are excluded",
+          "guideline": "Researchers might exclude some samples from the dataset—for instance, to remove outliers or to only focus on certain subsets. Report the criteria for selecting a subset of rows from the initial dataset (if any)."
+        },
+        {
+          "id": "4b",
+          "title": "How impossible or corrupt samples are dealt with",
+          "guideline": "Some datasets might have feature values that are impossible (for instance, if the height of a human is recorded as greater than 10 feet). Some samples might have corrupt data.\n\nReport the checks made for impossible or corrupt data. In case you find impossible or corrupt data, report mitigation strategies, such as methods used for detecting or removing outliers."
+        },
+        {
+          "id": "4c",
+          "title": "All transformations of the dataset from its raw form (3a.) to the form used in the model, for instance, treatment of missing data and normalization",
+          "guideline": "Researchers often perform several transformations on a dataset before using it in an ML model. For example, they might impute missing data in a dataset using mean imputation or over-sample data from the minority class.\n\nReport the precise sequence of all transformations of data from its raw form to the final form used in the model (e.g., missing data imputation, feature or outcome normalization, data augmentation using oversampling), preferably through a flow-chart.\n\nSpecify if each transformation is data-dependent (e.g., mean imputation) or data-independent (e.g., log transformation). Note that data-dependent transformations must be done within splits."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Modeling",
+      "description": "There are many steps involved in creating an ML model. This module helps specify the main steps in the modeling process, including feature selection, the types of models considered, and evaluation.",
+      "items": [
+        {
+          "id": "5a",
+          "title": "Detailed descriptions of all models trained, including all features used, types of models implemented, and loss function used",
+          "guideline": "To help readers determine how the models were trained, provide a detailed description of all models trained over the course of the study. For each model, include:\n\n1. Inputs (including any feature selection steps and a description of the set of features used) and outputs\n2. Types of models implemented (e.g., Random Forests, Neural Networks)\n3. Loss function used"
+        },
+        {
+          "id": "5b",
+          "title": "Justification for the choice of model types implemented",
+          "guideline": "Describe why the types of models used are relevant for the study. Examples are 'using a standard method for this field such as regularized regressions', or 'using decision trees for high explainability.'"
+        },
+        {
+          "id": "5c",
+          "title": "Method for evaluating the model(s) reported in the paper, including details of train-test splits or cross-validation folds",
+          "guideline": "Evaluating ML models requires testing them on data that they were not trained on, for instance by using a held-out test set or cross-validation (CV).\n\nReport how the dataset is split for evaluating the ML model(s), for instance:\n\n1. Cross-validation or nested CV\n2. Held-out test set (internal validation set)\n3. True out-of-sample set (external validation set; where the data comes from a different set compared to training data)\n\nFor the model evaluation method used, report details such as the number of samples in each train-test split or CV fold, as well as the number of samples of each class in each split (for a classification task)."
+        },
+        {
+          "id": "5d",
+          "title": "Method for selecting the model(s) reported in the paper",
+          "guideline": "Several ML models might be fit using the training set.\n\nReport the criteria for choosing the final model(s) reported in the study. For instance, report if model performance on the training set, internal cross-validation fold (for nested cross-validation) or a separate validation set was used to select the final model(s) reported in the paper."
+        },
+        {
+          "id": "5e",
+          "title": "For the model(s) reported in the paper, specify details about the hyperparameter tuning",
+          "guideline": "ML models often have hyperparameters. For example, Lasso regression has an additional penalty term (lambda or λ) that can be tuned. Tuning hyperparameters—trying different values and picking the one that works best—can help find the optimal performance for a given model and dataset.\n\nReport the method used to compare the performance of different hyperparameter values. This should include details of what values for each parameter are considered, why these values are reasonable, how various hyperparameters are selected (for example, grid search or random search), and which hyperparameters are used in the final model(s) reported in the paper."
+        },
+        {
+          "id": "5f",
+          "title": "Justification that model comparisons are against appropriate baselines",
+          "guideline": "If comparing model performance against baselines, justify how the baselines are tuned appropriately and the model comparison is fair if applicable. (Note that this does not apply to comparisons against non-model based performance, such as comparing ML methods with human performance.)"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Data leakage",
+      "description": "Data leakage is a spurious relationship between the independent variables and the target variable that arises as an artifact of the data collection, sampling, pre-processing or modeling steps. Since the spurious relationship won't be present in the distribution about which scientific claims are made, leakage usually leads to inflated estimates of model performance.",
+      "items": [
+        {
+          "id": "6a",
+          "title": "Justification that pre-processing (Section 4) and modeling (Section 5) steps only use information from the training dataset (and not the test dataset)",
+          "guideline": "When information from the test set is used during the training process, it leads to overly optimistic performance and results in data leakage.\n\nJustify how all pre-processing (Section 4) and modeling (Section 5) steps only use information from the training data and not the entire dataset (e.g., they were performed after the data splits or cross-validation splits)."
+        },
+        {
+          "id": "6b",
+          "title": "Methods to address dependencies or duplicates between the training and test datasets (e.g. different samples from the same patients are kept in the same dataset partition)",
+          "guideline": "In some cases, samples in the dataset might have dependencies. For example, a clinical dataset might have many samples from the same patient. In such cases, the train-test split or cross-validation (CV) split should take these dependencies into account—for instance, by including all samples from each patient in the same CV fold or train-test split.\n\nSimilarly, duplicates in the datasets can also spread across training and test sets if the dataset is split randomly. This should be avoided, as it leaks information across the train-test split.\n\nReport if the dataset used has dependencies or duplicates. If it does, detail how these are addressed (for example, by using block CV or removing duplicate rows of data)."
+        },
+        {
+          "id": "6c",
+          "title": "Justification that each feature or input used in the model is legitimate for the task at hand and does not lead to leakage",
+          "guideline": "Leakage can result from any of the features used in a model being a proxy for the outcome. For example, a prominent paper on hypertension prediction suffered from data leakage due to illegitimate features. The model included the use of anti-hypertensive drugs as a feature in a clinical model used to predict hypertension.\n\nJustify why each of the features used in the model is legitimate for the task at hand. Note that you do not necessarily need to list each feature individually; instead, you can provide arguments for a set of features together in case the same argument applies to all of them."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Metrics and uncertainty",
+      "description": "The performance of ML models is key to the scientific claims of interest. It is important to reason about why the metrics used are appropriate for the task at hand. Additionally, communicating and reasoning about uncertainty is important to discourage readers from ignoring the uncertainty in the final results.",
+      "items": [
+        {
+          "id": "7a",
+          "title": "All metrics used to assess and compare model performance (e.g., accuracy, AUROC etc.). Justify that the metric used to select the final model is suitable for the task",
+          "guideline": "Several metrics are often used to assess how well an ML model performs and to compare the performance of different ML models. In some cases, these metrics are reported as part of a paper's final results, while in others, they are used to make intermediate decisions such as identifying which models to include in the study or to decide which hyperparameters should be used.\n\nReport all metrics used to assess and compare model performance (e.g., Accuracy, AUC-ROC etc.). Include metrics that are used to make decisions about which model(s) are reported as well as the metrics used to evaluate the reported model(s).\n\nSome metrics are unsuitable for certain problems. For example, accuracy might not be suitable to measure the performance of an ML model in the presence of heavy class imbalance. Justify the choice of metric(s) used for the scientific claim being made based on the ML model."
+        },
+        {
+          "id": "7b",
+          "title": "Uncertainty estimates (e.g., confidence intervals, standard deviations), and details of how these are calculated",
+          "guideline": "For each performance metric reported in a paper, report an estimate of uncertainty such as standard deviations or confidence intervals. This could be part of graphs or tables in the paper.\n\nNote that applying a bootstrap on the validation set is one way to get uncertainty estimates for a population mean based on a sample from that population.\n\nReport the uncertainty estimate. Also report how the uncertainty estimate is calculated and justify why the method used for uncertainty estimation is valid."
+        },
+        {
+          "id": "7c",
+          "title": "Justification for the choice of statistical tests (if used) and a check for the assumptions of the statistical test",
+          "guideline": "Statistical tests used for comparing model performance come with several assumptions.\n\nReport the type of statistical test used in the paper (if any) for comparing model performance. Report the assumptions of the statistical test and justify why these assumptions are satisfied.\n\nIf using bootstrapped confidence intervals for performance metrics, one statistical test is to see if the interval contains a baseline value. Note that reliance on statistical significance testing has led to misinterpretations and false conclusions."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Generalizability and limitations",
+      "description": "External validity (or 'generalizability') refers to the applicability of a scientific claim beyond the specific dataset based on which it is made.",
+      "items": [
+        {
+          "id": "8a",
+          "title": "Evidence of external validity",
+          "guideline": "External validity (or 'generalizability') refers to the applicability of a scientific claim beyond the specific dataset based on which it is made. This includes the extent to which the findings from a study's sample apply to the target population, as well as the extent to which the findings apply to other populations, outcomes, and contexts.\n\nResearchers can use a mix of quantitative and theoretical approaches to make arguments regarding their findings' ability to generalize to other populations, outcomes, and contexts. They can report quantitative evidence by testing their claims in out-of-distribution data. They can make theoretical arguments about their expectations of external validity by referring to prior literature and reasoning about the level of similarity between contexts.\n\nReport evidence regarding the external validity of the study's findings."
+        },
+        {
+          "id": "8b",
+          "title": "Contexts in which the authors do not expect the study's findings to hold",
+          "guideline": "Explicit boundaries around the applicability of a scientific claim can help clarify which settings we should expect the scientific claims to hold in. Authors are in the best position to understand limits to the applicability of their claims.\n\nReport examples of settings or domains where the scientific claims made in the study do not hold."
+        }
+      ]
+    }
+  ]
+}

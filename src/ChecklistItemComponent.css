@@ -1,0 +1,124 @@
+.checklist-item {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 12px;
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.checklist-item:hover {
+  border-color: #4f46e5;
+  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.1);
+}
+
+.checklist-item.completed {
+  background-color: #f0fdf4;
+  border-color: #86efac;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.item-checkbox-title {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  flex: 1;
+}
+
+.item-checkbox {
+  margin-top: 4px;
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  accent-color: #4f46e5;
+}
+
+.item-number {
+  font-weight: 700;
+  color: #4f46e5;
+  min-width: 40px;
+  padding: 2px 8px;
+  background-color: #e0e7ff;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.item-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1f2937;
+  line-height: 1.4;
+}
+
+.checklist-item.completed .item-title {
+  color: #666;
+  text-decoration: line-through;
+}
+
+.guideline-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.guideline-toggle:hover {
+  background-color: #f0f0f0;
+}
+
+.guideline-toggle.open {
+  background-color: #fef3c7;
+}
+
+.guideline-content {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 2px solid #e0e7ff;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 1000px;
+  }
+}
+
+.guideline-header {
+  color: #4f46e5;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+}
+
+.guideline-text {
+  color: #4b5563;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.guideline-text p {
+  margin: 8px 0;
+}
+
+.guideline-text p:first-child {
+  margin-top: 0;
+}
+
+.guideline-text p:last-child {
+  margin-bottom: 0;
+}
