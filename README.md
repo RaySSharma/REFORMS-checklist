@@ -147,20 +147,6 @@ To modify the checklist content, edit `data.json`. The structure is:
 }
 ```
 
-## Browser Support
-
-- Chrome/Edge: Latest 2 versions
-- Firefox: Latest 2 versions
-- Safari: Latest 2 versions
-- Mobile browsers: Current versions
-
-## Performance
-
-- Lightweight: ~50KB gzipped
-- Fast startup: <1s load time
-- Smooth interactions: 60fps animations
-- Optimized for offline use
-
 ## Contributing
 
 This app is built to accompany the REFORMS paper. For suggestions or improvements:
@@ -181,4 +167,4 @@ Obermeyer et al. "Dissecting racial bias in an algorithm used to manage the heal
 
 ---
 
-Built with ❤️ to support rigorous ML-based scientific research
+Built with Claude Haiku 4.5 to support rigorous ML-based scientific research
