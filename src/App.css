@@ -32,6 +32,7 @@ body {
 .header-content {
   max-width: 1400px;
   margin: 0 auto;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -54,6 +55,7 @@ body {
   display: flex;
   gap: 20px;
   align-items: center;
+  margin-left: auto;
 }
 
 .header-link {
@@ -68,6 +70,15 @@ body {
 
 .header-link:hover {
   background-color: rgba(255, 255, 255, 0.3);
+}
+
+.github-link {
+  margin-left: auto;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.github-link:hover {
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .app-content {

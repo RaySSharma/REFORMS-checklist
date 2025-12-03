@@ -91,6 +91,15 @@ export const App: React.FC = () => {
           >
             Official REFORMS Site →
           </a>
+          <a
+            href="https://github.com/RaySSharma/REFORMS-checklist"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="header-link github-link"
+            title="View source code on GitHub"
+          >
+            🐙 View Source on GitHub
+          </a>
         </div>
       </header>
 
